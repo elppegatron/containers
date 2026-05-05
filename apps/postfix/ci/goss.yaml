@@ -1,0 +1,11 @@
+file:
+  /entrypoint.sh:
+    exists: true
+
+group:
+  postfix:
+    exists: true
+
+user:
+  postfix:
+    exists: true
