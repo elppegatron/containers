@@ -15,9 +15,9 @@ RUN getent group postfix || groupadd -r postfix \
     && getent passwd postfix || useradd -r -g postfix -d /var/spool/postfix postfix
 
 # Copy a minimal entrypoint
-COPY ./apps/postfix/scripts/entrypoint.sh /entrypoint.sh
-RUN chmod 500 /entrypoint.sh \
-    && chown postfix:postfix /entrypoint.sh
+COPY ./apps/postfix/scripts/entrypoint.sh /usr/sbin/entrypoint.sh
+RUN chmod 500 /usr/sbin/entrypoint.sh \
+    && chown root:root /usr/sbin/entrypoint.sh
 
 # Configure postfix to log to stdout
 RUN echo "maillog_file = /dev/stdout" >> /etc/postfix/main.cf
@@ -26,4 +26,4 @@ RUN echo "maillog_file = /dev/stdout" >> /etc/postfix/main.cf
 EXPOSE 25/tcp
 
 # Run Postfix in foreground (required for containers)
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/sbin/entrypoint.sh"]
