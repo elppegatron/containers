@@ -1,5 +1,5 @@
 file:
-  /entrypoint.sh:
+  /usr/sbin/entrypoint.sh:
     exists: true
 
 group:
