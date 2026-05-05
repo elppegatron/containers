@@ -1,5 +1,5 @@
 # Rocky Linux 10 minimal base
-FROM rockylinux:10-minimal
+FROM quay.io/rockylinux/rockylinux:10-minimal
 
 # Install only what Postfix strictly needs
 RUN microdnf install -y \
