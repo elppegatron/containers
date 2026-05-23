@@ -1,4 +1,4 @@
-FROM ghcr.io/tkpegatron/alpine:rolling@sha256:f35a60c42f2270f831593771aabfcfa3311b4f13d8c2355276ef1423fae78dfc
+FROM ghcr.io/tkpegatron/alpine:rolling@sha256:004aa4600c48be1d098fa3fe0ae414cd10598162795730d745d3096a97790e3f
 
 # -{ MOD: Add repositories }
 RUN /bin/true \
