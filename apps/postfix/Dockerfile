@@ -17,7 +17,7 @@ RUN getent group postfix || groupadd -r postfix \
     && getent passwd postfix || useradd -r -g postfix -d /var/spool/postfix postfix
 
 # Copy entrypoint script
-COPY ./apps/postfix/entrypoint.sh /usr/sbin/entrypoint.sh
+COPY ./entrypoint.sh /usr/sbin/entrypoint.sh
 RUN chmod 500 /usr/sbin/entrypoint.sh \
     && chown root:root /usr/sbin/entrypoint.sh
 
